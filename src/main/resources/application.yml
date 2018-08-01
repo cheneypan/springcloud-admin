@@ -20,9 +20,10 @@ eureka:
   client:
     registry-fetch-interval-seconds: 5
     service-url:
-      defaultZone: http://discovery:6001/eureka/
+      defaultZone: http://${discovery:localhost}:6001/eureka/
   instance:
-    prefer-ip-address: true
+    prefer-ip-address: false
+    hostname: ${ServiceAddress:localhost}
 
 security:
   basic:
